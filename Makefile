@@ -97,6 +97,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xlirate/git/Cell-DEVS-Cadmium-Simulation-Environment/Cadmium-Cell-DEVS-Models/Cadmium-Cell-DEVS-SAMC/CMakeFiles /home/xlirate/git/Cell-DEVS-Cadmium-Simulation-Environment/Cadmium-Cell-DEVS-Models/Cadmium-Cell-DEVS-SAMC//CMakeFiles/progress.marks
@@ -130,44 +141,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hoya
+# Target rules for targets named co2_lab
 
 # Build rule for target.
-hoya: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hoya
-.PHONY : hoya
+co2_lab: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 co2_lab
+.PHONY : co2_lab
 
 # fast build rule for target.
-hoya/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hoya.dir/build.make CMakeFiles/hoya.dir/build
-.PHONY : hoya/fast
+co2_lab/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/build
+.PHONY : co2_lab/fast
 
-model/main.o: model/main.cpp.o
+model/co2_main.o: model/co2_main.cpp.o
 
-.PHONY : model/main.o
+.PHONY : model/co2_main.o
 
 # target to build an object file
-model/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hoya.dir/build.make CMakeFiles/hoya.dir/model/main.cpp.o
-.PHONY : model/main.cpp.o
+model/co2_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/model/co2_main.cpp.o
+.PHONY : model/co2_main.cpp.o
 
-model/main.i: model/main.cpp.i
+model/co2_main.i: model/co2_main.cpp.i
 
-.PHONY : model/main.i
+.PHONY : model/co2_main.i
 
 # target to preprocess a source file
-model/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hoya.dir/build.make CMakeFiles/hoya.dir/model/main.cpp.i
-.PHONY : model/main.cpp.i
+model/co2_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/model/co2_main.cpp.i
+.PHONY : model/co2_main.cpp.i
 
-model/main.s: model/main.cpp.s
+model/co2_main.s: model/co2_main.cpp.s
 
-.PHONY : model/main.s
+.PHONY : model/co2_main.s
 
 # target to generate assembly for a file
-model/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hoya.dir/build.make CMakeFiles/hoya.dir/model/main.cpp.s
-.PHONY : model/main.cpp.s
+model/co2_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/model/co2_main.cpp.s
+.PHONY : model/co2_main.cpp.s
 
 # Help Target
 help:
@@ -177,10 +188,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... hoya"
-	@echo "... model/main.o"
-	@echo "... model/main.i"
-	@echo "... model/main.s"
+	@echo "... test"
+	@echo "... co2_lab"
+	@echo "... model/co2_main.o"
+	@echo "... model/co2_main.i"
+	@echo "... model/co2_main.s"
 .PHONY : help
 
 
