@@ -141,44 +141,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named co2_lab
+# Target rules for targets named samc
 
 # Build rule for target.
-co2_lab: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 co2_lab
-.PHONY : co2_lab
+samc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 samc
+.PHONY : samc
 
 # fast build rule for target.
-co2_lab/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/build
-.PHONY : co2_lab/fast
+samc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samc.dir/build.make CMakeFiles/samc.dir/build
+.PHONY : samc/fast
 
-model/co2_main.o: model/co2_main.cpp.o
+model/samc_main.o: model/samc_main.cpp.o
 
-.PHONY : model/co2_main.o
+.PHONY : model/samc_main.o
 
 # target to build an object file
-model/co2_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/model/co2_main.cpp.o
-.PHONY : model/co2_main.cpp.o
+model/samc_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samc.dir/build.make CMakeFiles/samc.dir/model/samc_main.cpp.o
+.PHONY : model/samc_main.cpp.o
 
-model/co2_main.i: model/co2_main.cpp.i
+model/samc_main.i: model/samc_main.cpp.i
 
-.PHONY : model/co2_main.i
+.PHONY : model/samc_main.i
 
 # target to preprocess a source file
-model/co2_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/model/co2_main.cpp.i
-.PHONY : model/co2_main.cpp.i
+model/samc_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samc.dir/build.make CMakeFiles/samc.dir/model/samc_main.cpp.i
+.PHONY : model/samc_main.cpp.i
 
-model/co2_main.s: model/co2_main.cpp.s
+model/samc_main.s: model/samc_main.cpp.s
 
-.PHONY : model/co2_main.s
+.PHONY : model/samc_main.s
 
 # target to generate assembly for a file
-model/co2_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/co2_lab.dir/build.make CMakeFiles/co2_lab.dir/model/co2_main.cpp.s
-.PHONY : model/co2_main.cpp.s
+model/samc_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/samc.dir/build.make CMakeFiles/samc.dir/model/samc_main.cpp.s
+.PHONY : model/samc_main.cpp.s
 
 # Help Target
 help:
@@ -189,10 +189,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... co2_lab"
-	@echo "... model/co2_main.o"
-	@echo "... model/co2_main.i"
-	@echo "... model/co2_main.s"
+	@echo "... samc"
+	@echo "... model/samc_main.o"
+	@echo "... model/samc_main.i"
+	@echo "... model/samc_main.s"
 .PHONY : help
 
 

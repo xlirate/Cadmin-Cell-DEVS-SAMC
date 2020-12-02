@@ -20,7 +20,7 @@ find_package(Boost COMPONENTS program_options unit_test_framework REQUIRED)
 include_directories (${Boost_INCLUDE_DIRS})
 
 
-add_executable(co2_lab model/co2_main.cpp)
-target_link_libraries(co2_lab Boost::program_options)
+add_executable(samc model/samc_main.cpp)
+target_link_libraries(samc Boost::program_options)
 
 
