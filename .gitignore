@@ -66,5 +66,6 @@ automation/scenarios/*
 automation/analysis/*
 simulation_results/*
 
+fig/*
 
 # Specific files

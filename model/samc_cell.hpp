@@ -156,12 +156,16 @@ public:
             // First time through, create travel_rate cache
             double living = 1-new_state.lethality;
             double total_permiability = 0;
-            new_state.deaths += 1;
+
             for(auto n_id : neighbors){
                 total_permiability += state.neighbors_state.at(n_id).permeability;
             }
+            double scalar = 0;
+            if(total_permiability){
+                scalar = living/total_permiability;
+            }
             for(auto n_id : neighbors){
-                new_state.travel_rate.push_back({n_id, living*state.neighbors_state.at(n_id).permeability/total_permiability});
+                new_state.travel_rate.push_back({n_id, scalar*state.neighbors_state.at(n_id).permeability});
             }
         }else{
 
