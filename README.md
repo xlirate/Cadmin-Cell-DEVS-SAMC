@@ -1,4 +1,13 @@
-# 2&3D_without_pedestrian_behavior
+# SAMC implemented in Cell-DEVS
 
-CO2_Source appear at Workstation after 50 time tick, dispaaear after 500 time tick. Compatible with both 2D and 3D
+See `report/report.pdf` for details
 
+## Usage
+
+`$ python3 ./config_maker.py` to generate or update the input files found in `./config`
+
+`$ cmake . && make` to make, assuming everything is as it should be
+
+`$ python3 ./display_results.py` to run all input files, or `$ python3 ./display_results.py './config/name or glob of input files*' './config/more names or globs of input files*'` to run any number of inputs, in order.
+
+Good luck!
