@@ -65,7 +65,7 @@ using logger_top=logger::multilogger<state, log_messages, global_time_mes, globa
 int main(int argc, char ** argv) {
     if (argc < 2) {
         cout << "Program used with wrong parameters. The program must be invoked as follows:";
-        cout << argv[0] << " SCENARIO_CONFIG.json [MAX_SIMULATION_TIME (default: 200)]" << endl;
+        cout << argv[0] << " SCENARIO_CONFIG.json [MAX_SIMULATION_TIME (default: 500)]" << endl;
         return -1;
     }
     samc_coupled<TIME> test = samc_coupled<TIME>("samc_map");
@@ -78,8 +78,8 @@ int main(int argc, char ** argv) {
     std::shared_ptr<cadmium::dynamic::modeling::coupled<TIME>> t = std::make_shared<samc_coupled<TIME>>(test);
 
     cadmium::dynamic::engine::runner<TIME, logger_top> r(t, {0});
-    long sim_time = (argc > 2)? atol(argv[2]) : 200;
-    if(sim_time <= 0){sim_time = 200;}
+    long sim_time = (argc > 2)? atol(argv[2]) : 500;
+    if(sim_time <= 0){sim_time = 500;}
 
     r.run_until(sim_time);
 
